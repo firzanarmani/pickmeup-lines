@@ -9,7 +9,7 @@ export interface IQuote extends Document {
 }
 
 const QuoteSchema: Schema = new Schema({
-    quote: { type: String, required: true },
+    quote: { type: String, required: true, trim: true },
     author: { type: String, required: false, default: 'Unknown' },
     details: { type: String, required: false, default: '' },
     verified: { type: Boolean, required: false, default: false },
