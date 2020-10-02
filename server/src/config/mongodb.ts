@@ -3,7 +3,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const mongoUrl = `mongodb://localhost/db_pickmeup_lines_${process.env.NODE_ENV}`
+const mongoUrl =
+    `mongodb+srv://${process.env.DB_USER}:` +
+    `${process.env.DB_PASS}@${process.env.DB_HOST}` +
+    `${process.env.DB_NAME}_${process.env.NODE_ENV}?retryWrites=true&w=majority`
 
 export const connectToDatabase = (): void => {
     mongoose
