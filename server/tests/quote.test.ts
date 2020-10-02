@@ -10,6 +10,17 @@ import Quote from '../src/model/quote.model'
 chai.use(chaiHttp)
 chai.should()
 
+before((done) => {
+    const db = mongoose.connection
+    db.on('error', () => {
+        console.error('Error loading database before starting tests')
+    })
+    db.once('open', () => {
+        console.log('Beginning tests')
+        done()
+    })
+})
+
 beforeEach((done) => {
     Quote.deleteMany({}, () => {
         done()
