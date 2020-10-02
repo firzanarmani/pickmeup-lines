@@ -8,4 +8,4 @@ matrix:
     before_script:
     - cd server
     script:
-    - npm start
+    - npm test
