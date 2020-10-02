@@ -1,42 +1,20 @@
+import { connectToDatabase } from './mongodb'
 import express from 'express'
-import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import routeQuotes from '../routes/quote.routes'
 
-class App {
-    public app: express.Application
-    // TODO: dotenv
-    public mongoUrl = 'mongodb://localhost/db_pickmeup_lines_local'
+const app: express.Application = express()
 
-    constructor() {
-        this.app = express()
-        this.config()
-        this.connectToDatabase()
-    }
+// Setup app configurations (middleware)
+app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
-    private config(): void {
-        this.app.use(cors())
-        this.app.use(bodyParser.json())
-        this.app.use(bodyParser.urlencoded({ extended: false }))
-        routeQuotes(this.app)
-    }
+// Set routes for quotes API
+routeQuotes(app)
 
-    private connectToDatabase(): void {
-        mongoose
-            .connect(this.mongoUrl, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                useCreateIndex: true,
-                useFindAndModify: false,
-            })
-            .then(() => {
-                return console.log(`Successfully connected to ${this.mongoUrl}`)
-            })
-            .catch((error) => {
-                return console.log('Error connecting to database: ', error)
-            })
-    }
-}
+// Connect to MongoDB
+connectToDatabase()
 
-export default App
+export default app
