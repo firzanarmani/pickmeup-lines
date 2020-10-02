@@ -9,13 +9,14 @@
 <details><summary><b>SPOILER ALERT</b></summary>
 
 <p align="center">
-  <img width="500" src="https://media.giphy.com/media/XzkGfRsUweB9ouLEsE/source.gif">
+  <img width="500" src="https://media.giphy.com/media/XzkGfRsUweB9ouLEsE/giphy.gif">
 </p>
 
 Well maybe, Spider-man would've survived the snap if he heard something that would make him feel better!
 </details>
 <br />
 
+# Description
 **Pick(me)up Lines** is a simple application that shows you a feel-good line to pick you up when you're feeling down!
 
 Our Pick(me)up lines are picked from our community-curated database of feel-good lines. 
