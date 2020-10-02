@@ -24,7 +24,7 @@ export const create = async (newQuote: any): Promise<IQuote> => {
 }
 
 export const update = async (id: any, updatedQuote: any): Promise<IQuote> => {
-    return await Quote.findByIdAndUpdate(id, updatedQuote).exec()
+    return await Quote.findByIdAndUpdate(id, updatedQuote, { new: true }).exec()
 }
 
 export const remove = async (id: any): Promise<IQuote> => {
