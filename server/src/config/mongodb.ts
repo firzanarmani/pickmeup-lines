@@ -1,6 +1,9 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
-const mongoUrl = 'mongodb://localhost/db_pickmeup_lines_dev'
+dotenv.config()
+
+const mongoUrl = `mongodb://localhost/db_pickmeup_lines_${process.env.NODE_ENV}`
 
 export const connectToDatabase = (): void => {
     mongoose
