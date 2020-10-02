@@ -5,7 +5,7 @@ matrix:
     - "stable"
     # cache:
     # - "node_modules"
-    before_script:
+    before_install:
     - cd server
     script:
     - npm test
