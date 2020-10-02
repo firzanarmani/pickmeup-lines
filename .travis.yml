@@ -1,0 +1,11 @@
+matrix:
+  include:  
+  - language: node_js
+    node_js:
+    - "stable"
+    cache:
+    - "node_modules"
+    before_script:
+    - cd server
+    script:
+    - npm start
