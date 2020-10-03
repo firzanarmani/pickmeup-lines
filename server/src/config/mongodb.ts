@@ -23,7 +23,3 @@ export const connectToDatabase = (): void => {
             return console.log('Error connecting to database: ', error)
         })
 }
-
-export const disconnectFromDatabase = (): void => {
-    mongoose.disconnect
-}
