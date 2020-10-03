@@ -8,8 +8,8 @@ const mongoUrl =
     `${process.env.DB_PASS}@${process.env.DB_HOST}` +
     `${process.env.DB_NAME}_${process.env.NODE_ENV}?retryWrites=true&w=majority`
 
-export const connectToDatabase = async (): Promise<void> => {
-    await mongoose
+export const connectToDatabase = (): void => {
+    mongoose
         .connect(mongoUrl, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
