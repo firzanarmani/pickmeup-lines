@@ -10,6 +10,10 @@ import Quote from '../src/model/quote.model'
 chai.use(chaiHttp)
 chai.should()
 
+before((done) => {
+    mongoose.connection.on('open', done)
+})
+
 beforeEach((done) => {
     mongoose.connection.dropCollection('quotes', () => {
         done()
