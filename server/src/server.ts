@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 
-import app from './config/App'
+import app from './config/app'
 
 dotenv.config()
 
