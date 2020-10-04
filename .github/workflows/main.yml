@@ -12,13 +12,13 @@ jobs:
         node-version: [12.x]
     runs-on: ubuntu-latest
     steps:
-      - name: Navigate to server directory
-        run: cd server
       - uses: actions/checkout@v2.3.3
       - name: Setup node.js
         uses: actions/setup-node@v2.1.2
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Navigate to server directory
+        run: cd server
       - name: Install dependecies
         run: npm install
       - name: Build server application
