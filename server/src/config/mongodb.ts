@@ -3,15 +3,16 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+const env = process.env.NODE_ENV || 'local'
+
 const mongoHost =
-    process.env.NODE_ENV == 'production'
+    env == 'production'
         ? `mongodb+srv://${process.env.DB_USER}:` +
           `${process.env.DB_PASS}@${process.env.DB_HOST}`
         : `mongodb://localhost/`
 
 const mongoUrl =
-    mongoHost +
-    `${process.env.DB_NAME}_${process.env.NODE_ENV}?retryWrites=true&w=majority`
+    mongoHost + `db_pickmeup_lines_${env}?retryWrites=true&w=majority`
 
 export const connectToDatabase = (): void => {
     mongoose
