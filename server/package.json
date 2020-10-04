@@ -15,8 +15,8 @@
     "mongoose-simple-random": "^0.4.1"
   },
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
     "@types/chai": "^4.2.12",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.8",
     "@types/mocha": "^8.0.3",
     "@types/node": "^14.11.2",
@@ -36,6 +36,7 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon src/server.ts",
+    "seed": "ts-node src/db/seed.ts",
     "test": "./node_modules/.bin/mocha --require ts-node/register tests/*.ts"
   },
   "author": "",

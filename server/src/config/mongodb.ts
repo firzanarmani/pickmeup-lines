@@ -11,7 +11,7 @@ const mongoHost =
           `${process.env.DB_PASS}@${process.env.DB_HOST}`
         : `mongodb://localhost/`
 
-const mongoUrl =
+export const mongoUrl =
     mongoHost + `db_pickmeup_lines_${env}?retryWrites=true&w=majority`
 
 export const connectToDatabase = (): void => {
