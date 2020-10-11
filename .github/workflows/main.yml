@@ -24,8 +24,10 @@ jobs:
         run: npm install
       - name: Build server application
         run: npm run build
+      - name: Copy node_modules into dist folder
+        run: cp -r ./node_modules ./dist/
       - name: Zip dist/ folder
-        run: zip -qq -r -j ./bundle.zip ./dist/*
+        run: cd ./dist/ && zip -qq -r ../bundle.zip .
       - name: Deploy zip to lambda
         uses: appleboy/lambda-action@v0.0.4
         with:
