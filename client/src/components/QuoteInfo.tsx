@@ -41,6 +41,7 @@ export const QuoteInfo: React.FC = () => {
 
   const onSubmit = (data: any) => {
     updateQuote(data as IQuote).then(res => {
+      setEdit(false)
       history.push('/quotes/' + (res.data.data as IQuote)._id)
     }).finally()
   };
